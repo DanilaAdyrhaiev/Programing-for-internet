@@ -1,40 +1,26 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<title>Task 1</title>
-</head>
-<body>
 	<script>
-		// запит на введення першого числа
 		let num1 = parseInt(prompt("Введіть додатнє ціле число №1:"));
-		// перевірка дотримання умови
-		while (num1 <= 0 || isNaN(num1)) {
-			num1 = parseInt(prompt("Введене число не є додатнім цілим числом. Введіть додатнє ціле число №1:"));
+		while(num1 <= 0 || isNaN(num1)) {
+			num1 = parseInt(prompt("Некоректне значення, введіть додатнє ціле число №1:"));
 		}
-
-		// запит на введення другого числа
 		let num2 = parseInt(prompt("Введіть додатнє ціле число №2:"));
-		// перевірка дотримання умови
-		while (num2 <= 0 || isNaN(num2)) {
-			num2 = parseInt(prompt("Введене число не є додатнім цілим числом. Введіть додатнє ціле число №2:"));
+		while(num2 <= 0 || isNaN(num2)) {
+			num2 = parseInt(prompt("Некоректне значення, введіть додатнє ціле число №2:"));
 		}
-
-		// знаходження більшого числа
-		let max_num = Math.max(num1, num2);
-
-		// знаходження меншого числа
-		let min_num = Math.min(num1, num2);
-
-		// знаходження суми чисел, які діляться без залишку на менше число
+		let max = Math.max(num1, num2);
+		let min = Math.min(num1, num2);
 		let sum = 0;
-		for (let i = 0; i <= max_num; i++) {
-			if (i % min_num == 0) {
+		for(let i=0; i<=max; i++) {
+			if(i%min == 0) {
 				sum += i;
 			}
 		}
-
-		// виведення результату
 		alert("Сума чисел, які діляться без залишку на менше з введених чисел: " + sum);
 	</script>
+</head>
+<body>
 </body>
 </html>
