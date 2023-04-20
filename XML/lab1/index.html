@@ -1,0 +1,107 @@
+<!DOCTYPE html [
+<!ELEMENT html (head, body)>
+<!ELEMENT head (title, style)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT style (#PCDATA)>
+<!ELEMENT body (h1, h3, h4, p+, hr?, img?, h2, p+, ul?, ol?, p+)>
+<!ELEMENT h1 (#PCDATA)>
+<!ELEMENT h2 (#PCDATA)>
+<!ELEMENT h3 (#PCDATA)>
+<!ELEMENT h4 (#PCDATA)>
+<!ELEMENT p (#PCDATA | strong | em | u | del)*>
+<!ELEMENT strong (#PCDATA | em | u | del)*>
+<!ELEMENT em (#PCDATA | strong | u | del)*>
+<!ELEMENT u (#PCDATA | strong | em | del)*>
+<!ELEMENT del (#PCDATA | strong | em | u)*>
+<!ELEMENT hr EMPTY>
+<!ATTLIST hr color CDATA #IMPLIED>
+<!ATTLIST hr size CDATA #IMPLIED>
+<!ELEMENT img EMPTY>
+<!ATTLIST img src CDATA #REQUIRED
+				alt CDATA #IMPLIED
+				width CDATA #IMPLIED
+				height CDATA #IMPLIED
+				float (left | right | none) "none">
+<!ELEMENT ul (li+)>
+<!ELEMENT ol (li+)>
+<!ELEMENT li (#PCDATA)>
+<!ELEMENT a (#PCDATA)>
+<!ATTLIST a href CDATA #REQUIRED
+				target (blank | self) "self">
+]>
+<html>
+	<head>
+		<title>HTML-документ</title>
+		<!ELEMENT head (title)>
+		<!ELEMENT title (#PCDATA)>
+		<!ATTLIST img 
+			src CDATA #REQUIRED
+			alt CDATA #IMPLIED
+			width CDATA #IMPLIED
+			height CDATA #IMPLIED
+			float (left|right) #IMPLIED
+			margin CDATA #IMPLIED
+		>
+		<!ELEMENT body (h1,h3,h4,p*,hr?,img?,h2,p*,ol?,ul?,p*)>
+		<!ELEMENT h1 (#PCDATA)>
+		<!ELEMENT h2 (#PCDATA)>
+		<!ELEMENT h3 (#PCDATA)>
+		<!ELEMENT h4 (#PCDATA)>
+		<!ELEMENT p (#PCDATA|strong|em|u|del|a)*>
+		<!ELEMENT strong (#PCDATA|em|u|del|a)*>
+		<!ELEMENT em (#PCDATA|strong|u|del|a)*>
+		<!ELEMENT u (#PCDATA|strong|em|del|a)*>
+		<!ELEMENT del (#PCDATA|strong|em|u|a)*>
+		<!ELEMENT a (#PCDATA)*>
+		<!ATTLIST a
+			href CDATA #IMPLIED
+			target (blank|self|parent|top) #IMPLIED
+			title CDATA #IMPLIED
+		>
+		<!ELEMENT hr EMPTY>
+		<!ATTLIST hr
+			color CDATA #IMPLIED
+			size CDATA #IMPLIED
+		>
+		<!ELEMENT ol (li)+>
+		<!ELEMENT li (#PCDATA)>
+		<!ATTLIST ol
+			type (1|a|A|i|I) #IMPLIED
+			start CDATA #IMPLIED
+		>
+		<!ELEMENT ul (li)+>
+		<!ATTLIST ul
+			type (disc|circle|square) #IMPLIED
+		>
+	</head>
+    <body>
+	<h1>HTML-документ</h1>
+	<h3>Адирхаєва Данило Сослановича</h3>
+	<h4>Групи 323-Б</h4>
+	<p>Це текст мого документа. Я можу виділяти його <strong>напівжирним</strong>, <em>курсивом</em>,
+		<u>підкреслюванням</u> та <del>перекресленням</del>. Я також можу вирівнювати його по центру, зліва, справа
+		або за витинанням.</p>
+		<p align="center">Ще текст може знаходитись по центру</p>
+		<p align="right">Та nекст може знаходитись по правій частині</p>
+		<hr color="black" size="1"/>
+	<img src="images/hinata.png" alt="Зображення"/>
+		<h2>Що може студент третього курсу в нау?</h2>
+	<p>Базово знати такі мови програмування:</p>
+    <ol>
+			<li>С++</li>
+			<li>Java</li>
+			<li>C#</li>
+			<li>Python</li>
+		</ol>
+		<p>Окрім мов програмування, студен має навички</p>
+		<ul>
+			<li>Використання та створення баз даних</li>
+			<li>Cтворення алгоритмів</li>
+			<li>Викрпистання патернів програмування</li>
+			<li>Бізнес аналітка</li>
+		</ul>
+		<p>Ви можете написати мені на поштову скриньку за адресою <a
+				href="6850143@stud.nau.edu.ua">6850143@stud.nau.edu.ua</a>.
+			Також, Ви можете перейти на сайт <a href="https://mangalib.me/">https://mangalib.me/</a></p>
+	</body>
+</html>

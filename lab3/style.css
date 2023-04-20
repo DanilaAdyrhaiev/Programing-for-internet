@@ -1,0 +1,62 @@
+div{
+    width: 45%;
+    
+    margin-left: 100px;
+    background-color:rgb(221, 221, 221);
+}
+
+html{
+    height: 100%;
+    background: linear-gradient(to bottom, #ffffff, #111);
+}
+
+
+img{
+    width: 200px;
+    height: 300px;
+    float: left;
+    margin-left: -90px;
+    
+}
+
+.q_description{
+    margin: 0;
+    margin-left: 10px;
+}
+
+.a_description{
+    margin: 0 auto;
+    margin-left: 20px;
+}
+
+.text_description{
+    margin: 0;
+    width: 90%;
+    margin-left: 10px;
+}
+
+.descriprion-block{
+    display: flex;
+}
+
+h1{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+h4{
+    margin: 0;
+    width: 200px;
+    line-height: 30px;
+}
+
+p{
+    margin-top: -18px;
+}
+
+.p-desc{
+    margin: 0;
+    width: 200px;
+    line-height: 30px;
+}
+

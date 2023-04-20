@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript Test</title>
+  </head>
+  <body>
+    <script>
+      // Завдання 2 - організувати тест з 5 питань на тему "Синтаксис Javascript".
+      const questions = [
+        'Javascript - це мова програмування?',
+        'В JS є можливість використовувати функції?',
+        'В JS можна використовувати оператор if?',
+        'В JS не існує типу даних "null"?',
+        'В JS можна використовувати цикл "for"?',
+      ];
+      const correctAnswers = ['Так', 'Так', 'Так', 'Ні', 'Так'];
+      let score = 0;
+
+      // Функція для виведення запитань та отримання відповідей від користувача.
+      function askQuestion(questionIndex) {
+        const answer = prompt(questions[questionIndex] + ' (Так/Ні)');
+        if (answer === correctAnswers[questionIndex]) {
+          score++;
+        }
+      }
+
+      // Викликати функцію для кожного питання.
+      for (let i = 0; i < questions.length; i++) {
+        askQuestion(i);
+      }
+
+      // Вивести отриману оцінку.
+      const userName = prompt('Введіть своє ім\'я:');
+      const grade = Math.round(score / questions.length * 100);
+      alert(userName + ', ви здали тест на ' + grade + '%');
+    </script>
+  </body>
+</html>
