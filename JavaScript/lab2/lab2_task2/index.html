@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Мигання тексту</title>
+    <style>
+      #text {
+        font-size: 24px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        text-shadow: 1px 1px 1px #ccc;
+        color: rgb(255, 139, 30);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="text">Аніме це топ</div>
+    <script>
+      var text = document.getElementById("text");
+      setInterval(function() {
+        if (text.style.visibility === "hidden") {
+          text.style.visibility = "visible";
+        } else {
+          text.style.visibility = "hidden";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

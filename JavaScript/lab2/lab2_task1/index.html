@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Список тем аніме</title>
+  </head>
+  <body>
+    <h1>Список тем аніме:</h1>
+    <ul>
+      <li id="anime1">Наруто</li>
+      <li id="anime2">Ван-піс</li>
+      <li id="anime3">Доктор Стоун</li>
+      <li id="anime4">Пекельний рай</li>
+      <li id="anime5">Винищувач демонів</li>
+    </ul>
+
+    <script>
+      var animeThemes = [
+        document.getElementById('anime1').textContent,
+        document.getElementById('anime2').textContent,
+        document.getElementById('anime3').textContent,
+        document.getElementById('anime4').textContent,
+        document.getElementById('anime5').textContent
+      ];
+
+      function showarraycontent(arraytoshow) {
+        if (arraytoshow.length === 1) {
+          return arraytoshow[0];
+        } else if (arraytoshow.length === 2) {
+          return arraytoshow[0] + ' і ' + arraytoshow[1];
+        } else {
+          var result = '';
+          for (var i = 0; i < arraytoshow.length - 2; i++) {
+            result += arraytoshow[i] + ', ';
+          }
+          result += arraytoshow[arraytoshow.length - 2] + ' і ' + arraytoshow[arraytoshow.length - 1];
+          return result;
+        }
+      }
+
+      alert(showarraycontent(animeThemes))
+      var list = document.createElement('p');
+      list.textContent = showarraycontent(animeThemes);
+      document.body.appendChild(list);
+    </script>
+
+
+  </body>
+</html>
