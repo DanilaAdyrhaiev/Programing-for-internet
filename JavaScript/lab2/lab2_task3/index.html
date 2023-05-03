@@ -1,81 +1,65 @@
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>JavaScript Test</title>
-  </head>
-  <body>
-    <script>
-      let name = prompt("Введіть ваше ім'я:");
-        let questions = [
-        { 
-            text: "JavaScript - це мова програмування на стороні клієнта?",
-            answer: "так"
-        },
-        {
-            text: "JavaScript можна використовувати для розробки веб-додатків?",
-            answer: "так"
-        },
-        {
-            text: "JavaScript підтримує конструкцію if-else?",
-            answer: "так"
-        },
-        {
-            text: "JavaScript не підтримує роботу з функціями?",
-            answer: "ні"
-        },
-        {
-            text: "JavaScript можна використовувати для роботи з базами даних?",
-            answer: "ні"
-        }
-        ];
-
-        // Крок 2
-        let score = 0;
-        let timeLimit = 20; // час для відповіді на кожне запитання (в секундах)
-
-        for (let i = 0; i < questions.length; i++) {
-        let question = questions[i];
-        let answer = promptWithTimer(question.text, timeLimit);
-        if (answer === question.answer) {
-            score++;
-        }
-        }
-
-        // Крок 3
-        let grade = "";
-        if (score === 5) {
-        grade = "відмінно";
-        } else if (score >= 3) {
-        grade = "добре";
-        } else if (score >= 1) {
-        grade = "задовільно";
-        } else {
-        grade = "незадовільно";
-        }
-
-        // Крок 4
-        alert(name + ", ви здали тест на оцінку " + grade + ".");
-
-        function promptWithTimer(text, timeLimit) {
-        let timeLeft = timeLimit;
-        let intervalId = setInterval(function() {
-            console.clear();
-            console.log("Час на відповідь: " + timeLeft + " сек.");
-            timeLeft--;
-            if (timeLeft < 0) {
-            clearInterval(intervalId);
-            }
-        }, 1000);
-        
-        let answer = prompt(text + " (Так/Ні)");
-        clearInterval(intervalId);
-        
-        if (answer === null) {
-            alert("Відповідь не засчитано: час на відповідь минув.");
-        }
-        
-        return answer.toLowerCase();
-        }
-    </script>
-  </body>
+<head>
+	<title>Тест</title>
+	<script>
+		var questions = [
+			"Питання 1: Продовж назву. One?",
+			"Питання 2: Батько Боруто Та легенда Аніме?",
+			"Питання 3: Головний герой Ван писа?",
+			"Питання 4: Вбивця?",
+			"Питання 5: Столиця Японії"
+		];
+		var answers = [
+			"Piece",
+			"Наруто",
+			"Луффи",
+			"Акаме",
+			"Токіо"
+		];
+		var currentQuestion = 0;
+		var countdownTimer;
+		
+		function displayQuestion() {
+			document.getElementById("question").innerHTML = questions[currentQuestion];
+			startTimer();
+		}
+		
+		function startTimer() {
+			var timeLeft = 20;
+			countdownTimer = setInterval(function() {
+				document.getElementById("timer").innerHTML = "Час: " + timeLeft + " сек.";
+				timeLeft -= 1;
+				if (timeLeft < 0) {
+					clearInterval(countdownTimer);
+					document.getElementById("timer").innerHTML = "Час вийшов!";
+					checkAnswer("");
+				}
+			}, 1000);
+		}
+		
+		function checkAnswer(answer) {
+			clearInterval(countdownTimer);
+			if (answer === answers[currentQuestion]) {
+				document.getElementById("result").innerHTML = "Вірно!";
+			} else {
+				document.getElementById("result").innerHTML = "Неправильно!";
+			}
+			currentQuestion += 1;
+			if (currentQuestion < questions.length) {
+				displayQuestion();
+			} else {
+				document.getElementById("question").innerHTML = "Тест закінчено!";
+				document.getElementById("timer").innerHTML = "";
+			}
+		}
+	</script>
+</head>
+<body onload="displayQuestion();">
+	<h1>Тест</h1>
+	<div id="question"></div>
+	<input type="text" id="answer">
+	<button onclick="checkAnswer(document.getElementById('answer').value);">Відповісти</button>
+	<div id="timer"></div>
+	<div id="result"></div>
+</body>
 </html>
