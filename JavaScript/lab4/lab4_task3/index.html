@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Picture</title>
+    <style>
+      body {
+        background-color: green;
+      }
+      p{
+        text-align: center;
+      }
+      #triangle {
+        width: 0;
+        height: 0;
+        border-top: 50px solid red;
+        border-right: 50px solid transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #rectangle {
+        width: 200px;
+        height: 100px;
+        background-color: blue;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #ball {
+        width: 50px;
+        height: 50px;
+        background-color: brown;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: ball-animation 2s forwards;
+      }
+      @keyframes ball-animation {
+        0% {
+          top: 0;
+          left: 0;
+        }
+        50% {
+          top: 50%;
+          left: 50%;
+        }
+        51% {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        60% {
+          transform: translate(-50%, -50%) rotate(0);
+        }
+        100% {
+          top: 100%;
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="triangle"></div>
+    <div id="rectangle"></div>
+    <div id="ball"></div>
+    <p>Picture by Dan Adyrkhaiev</p>
+  </body>
+</html>

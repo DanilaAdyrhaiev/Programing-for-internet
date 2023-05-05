@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Календар</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			border: 2px solid blue;
+			background-color: yellow;
+			margin: 0 auto;
+			font-family: Arial, sans-serif;
+		}
+		th, td {
+			padding: 10px;
+			text-align: center;
+			border: 1px solid green;
+		}
+		th {
+			font-weight: bold;
+		}
+		.weekend {
+			background-color: rgb(238, 108, 108);
+			font-weight: bold;
+		}
+		.weekday {
+			background-color: lightgreen;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		const months = ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"];
+		const daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Нд"];
+		const now = new Date();
+		const month = now.getMonth();
+		const year = now.getFullYear();
+		const daysInMonth = new Date(year, month + 1, 0).getDate();
+		const firstDay = new Date(year, month, 1).getDay();
+
+		let dayOfMonth = 1;
+		let row = 1;
+
+		document.write("<table>");
+		document.write("<tr>");
+		document.write("<th colspan='7'>" + months[month] + " " + year + "</th>");
+		document.write("</tr>");
+		document.write("<tr>");
+		daysOfWeek.forEach(function(day) {
+			document.write("<th class='weekday'>" + day + "</th>");
+		});
+		document.write("</tr>");
+
+		while (dayOfMonth <= daysInMonth) {
+			document.write("<tr>");
+			for (let col = 1; col <= 7; col++) {
+				if ((row === 1 && col < firstDay) || (dayOfMonth > daysInMonth)) {
+					document.write("<td></td>");
+				} else {
+					if (col === 6 || col === 7) {
+						document.write("<td class='weekend'>" + dayOfMonth + "</td>");
+					} else {
+						document.write("<td>" + dayOfMonth + "</td>");
+					}
+					dayOfMonth++;
+				}
+			}
+			document.write("</tr>");
+			row++;
+		}
+		document.write("</table>");
+	</script>
+</body>
+</html>

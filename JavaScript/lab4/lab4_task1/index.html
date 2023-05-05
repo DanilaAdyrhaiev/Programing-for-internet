@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Рух рядка</title>
+    <style>
+      #text {
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        color: white;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="text">Hello, world!</div>
+    <script>
+      let text = document.getElementById("text");
+      let angle = 0;
+      let interval = setInterval(updatePosition, 50);
+
+      function updatePosition() {
+        let x = angle * 0.1;
+        let y = Math.sin(x * x) + Math.cos(x * x);
+        let scale = (y + 2) / 3 + 0.5;
+        text.style.transform = `translate(${x * 50}px, ${y * 50}px) scale(${scale})`;
+        text.style.opacity = Math.abs(Math.sin(angle * 0.1));
+        angle++;
+        if (angle >= 200) {
+          clearInterval(interval);
+        }
+      }
+    </script>
+  </body>
+</html>

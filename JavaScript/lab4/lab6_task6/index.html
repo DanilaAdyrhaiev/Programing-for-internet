@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Слайд-шоу з фотографіями</title>
+  </head>
+  <body>
+    <div style="text-align: center;">
+      <h3>Слайд-шоу з фотографіями</h3>
+      <img id="slide" src="./images/hinata.png" height="500" width="400">
+    </div>
+    
+    <script>
+      var Uris = new Array("images/1.jpg", "images/2.jpg", "images/3.jpg", "images/4.jpg");
+      var currentimage = 0;
+      var previousimage = -1;
+      
+      function slideshow() {
+        previousimage = currentimage;
+        currentimage = Math.floor(Math.random() * Uris.length);
+        while (previousimage == currentimage) {
+          currentimage = Math.floor(Math.random() * Uris.length);
+        }
+        document.getElementById('slide').setAttribute('src', Uris[currentimage]);
+      }
+      
+      setInterval(slideshow, 2500);
+    </script>
+  </body>
+</html>

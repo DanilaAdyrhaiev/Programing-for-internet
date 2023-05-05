@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Рухомий рядок</title>
+	<style>
+		.line {
+			position: absolute;
+			top: 50%;
+			height: 2px;
+			width: 200px;
+			background-color: black;
+			animation: move 2s linear infinite;
+		}
+		
+		@keyframes move {
+			0% {
+				left: 0;
+			}
+			50% {
+				left: calc(100vw);
+			}
+			100% {
+				left: calc(0vw);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="line"></div>
+</body>
+</html>
