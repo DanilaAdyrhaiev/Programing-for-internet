@@ -2,37 +2,37 @@ const product = [
     {
         id: 0,
         image: 'img/nothing.jpg', 
-        title: 'Z Flip Foldable Mobile', 
+        title: 'Iron Man', 
         price: 120,
     },
     {
         id: 1,
         image: 'img/nothing.jpg', 
-        title: 'Manga', 
+        title: 'Lego Avengers', 
         price: 120,
     },
     {
         id: 2,
         image: 'img/nothing.jpg', 
-        title: 'T-Shirt', 
+        title: 'Katana', 
         price: 120,
     },
     {
         id: 3,
         image: 'img/nothing.jpg', 
-        title: 'Pokemon', 
+        title: 'Шерлок', 
         price: 120,
     },
     {
         id: 5,
         image: 'img/nothing.jpg', 
-        title: 'Pokemon', 
+        title: 'Книга "Усе, Усюди та одразу"', 
         price: 120,
     },
     {
         id: 6,
         image: 'img/nothing.jpg', 
-        title: 'Pokemon', 
+        title: 'Лего "Чорна пантера"', 
         price: 120,
     }
 ];
